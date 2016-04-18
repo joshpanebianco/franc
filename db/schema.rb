@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160418022106) do
     t.string   "remuneration"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "user_id"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

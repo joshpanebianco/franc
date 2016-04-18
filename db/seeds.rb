@@ -11,9 +11,9 @@ job2 = Job.create(title: 'Pied Piper', description: 'A video compression company
 job3 = Job.create(title: 'Ansarada', description: 'If you love SQL, you will love us', location: 'The Rocks', requirements: 'Web Development', remuneration: '$50,000')
 
 User.destroy_all
-daniel = User.create(email: 'daniel@ga.co', password: 'chicken', password_confirmation: 'chicken', first_name: 'Daniel', last_name: 'Bennetts', address: 'Gladesville')
-don = User.create(email: 'don@ga.co', password: 'chicken', password_confirmation: 'chicken', first_name: 'Daniel', last_name: 'Bennetts', address: 'Gladesville')
-josh = User.create(email: 'josh@ga.co', password: 'chicken', password_confirmation: 'chicken', first_name: 'Daniel', last_name: 'Bennetts', address: 'Gladesville')
-dale = User.create(email: 'dale@ga.co', password: 'chicken', password_confirmation: 'chicken', first_name: 'Daniel', last_name: 'Bennetts', address: 'Gladesville')
+daniel = User.create(email: 'daniel@ga.co', password: 'chicken', password_confirmation: 'chicken', first_name: 'Daniel', last_name: 'Bennetts', address: 'Sydney')
+don = User.create(email: 'don@ga.co', password: 'chicken', password_confirmation: 'chicken', first_name: 'Don', last_name: 'Almond', address: 'Sydney')
+josh = User.create(email: 'josh@ga.co', password: 'chicken', password_confirmation: 'chicken', first_name: 'Josh', last_name: 'Panebianco', address: 'Sydney')
+dale = User.create(email: 'dale@ga.co', password: 'chicken', password_confirmation: 'chicken', first_name: 'Dale', last_name: 'Chapman', address: 'Sydney')
 
 daniel.jobs << job1 << job2

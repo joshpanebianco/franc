@@ -3,47 +3,53 @@
 <h1>Listing Jobs</h1>
 
 <div class="keyword_search">
-  <!-- <form action="/jobs" method="POST" id="searchForm">
-  <input type="text" name="search_term">
-    <button id="searchSubmit">Search</button>
-  </form> -->
 
+
+<!--   General Seach   -->
   <%= form_tag("/jobs", method: "get") do %>
-    <%= label_tag(:q, "Search for:") %>
+    <%= label_tag(:q, "General Search:") %>
     <%= text_field_tag(:search_term, params[:search_term]) %>
     <%= submit_tag("Search") %>
   <% end %>
 </div>
 
-
-<!-- <form action="" id="searchForm">
+ <form action="" id="searchForm">
 <label for="titlefield">Title:</label>
 <select id="titlefield">
  <option value=0 selected disabled>select</option>
+ <% Job.all.each do |job| %>
+          <option value="<%= job.id %>"><%= job.title %></option>
+          <% end %>
 </select>
 
-<label for="descriptionfield">Description:</label>
-<select id="decriptionfield">
- <option value=0 selected disabled>select</option>
-</select>
+
 
 <label for="locationfield">Location:</label>
 <select id="locationfield">
  <option value=0 selected disabled>select</option>
+ <% Job.all.each do |job| %>
+          <option value="<%= job.id %>"><%= job.location %></option>
+          <% end %>
 </select>
 
 <label for="requirementsfield">Requirements:</label>
 <select id="requirementsfield">
  <option value=0 selected disabled>select</option>
+ <% Job.all.each do |job| %>
+          <option value="<%= job.id %>"><%= job.title %></option>
+          <% end %>
 </select>
 
 <label for="remunerationfield">Remuneration:</label>
 <select id="remunerationfield">
  <option value=0 selected disabled>select</option>
+ <% Job.all.each do |job| %>
+          <option value="<%= job.id %>"><%= job.remuneration %></option>
+          <% end %>
 </select>
 
 <button id="searchSubmit">Search</button>
-</form> -->
+</form>
 <br>
 
 <div id="jobList">

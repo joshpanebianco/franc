@@ -6,26 +6,41 @@
 <label for="titlefield">Title:</label>
 <select id="titlefield">
  <option value=0 selected disabled>select</option>
+ <% Job.all.each do |job| %>
+          <option value="<%= job.id %>"><%= job.title %></option>
+          <% end %>
 </select>
 
 <label for="descriptionfield">Description:</label>
 <select id="decriptionfield">
  <option value=0 selected disabled>select</option>
+ <% Job.all.each do |job| %>
+          <option value="<%= job.id %>"><%= job.title %></option>
+          <% end %>
 </select>
 
 <label for="locationfield">Location:</label>
 <select id="locationfield">
  <option value=0 selected disabled>select</option>
+ <% Job.all.each do |job| %>
+          <option value="<%= job.id %>"><%= job.title %></option>
+          <% end %>
 </select>
 
 <label for="requirementsfield">Requirements:</label>
 <select id="requirementsfield">
  <option value=0 selected disabled>select</option>
+ <% Job.all.each do |job| %>
+          <option value="<%= job.id %>"><%= job.title %></option>
+          <% end %>
 </select>
 
 <label for="remunerationfield">Remuneration:</label>
 <select id="remunerationfield">
  <option value=0 selected disabled>select</option>
+ <% Job.all.each do |job| %>
+          <option value="<%= job.id %>"><%= job.remuneration %></option>
+          <% end %>
 </select>
 
 <button id="searchSubmit">Search</button>

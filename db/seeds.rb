@@ -16,4 +16,11 @@ don = User.create(email: 'don@ga.co', password: 'chicken', password_confirmation
 josh = User.create(email: 'josh@ga.co', password: 'chicken', password_confirmation: 'chicken', first_name: 'Josh', last_name: 'Panebianco', address: 'Sydney')
 dale = User.create(email: 'dale@ga.co', password: 'chicken', password_confirmation: 'chicken', first_name: 'Dale', last_name: 'Chapman', address: 'Sydney')
 
-daniel.jobs << job1 << job2
+Application.destroy_all
+app1 = Application.create(first_name: 'Daniel', last_name: 'Bennetts', email: 'daniel@ga.co', videoURL: 'https://example.com', comments: 'etc etc' )
+app2 = Application.create(first_name: 'Dale', last_name: 'Chapman', email: 'dale@ga.co', videoURL: 'https://example.com', comments: 'etc etc' )
+app3 = Application.create(first_name: 'Josh', last_name: 'Panebianco', email: 'josh@ga.co', videoURL: 'https://example.com', comments: 'etc etc' )
+
+daniel.jobs << job1
+
+daniel.applications << app1

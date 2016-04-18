@@ -2,6 +2,37 @@
 
 <h1>Listing Jobs</h1>
 
+<form action="" id="searchForm">
+<label for="titlefield">Title:</label>
+<select id="titlefield">
+ <option value=0 selected disabled>select</option>
+</select>
+
+<label for="descriptionfield">Description:</label>
+<select id="decriptionfield">
+ <option value=0 selected disabled>select</option>
+</select>
+
+<label for="locationfield">Location:</label>
+<select id="locationfield">
+ <option value=0 selected disabled>select</option>
+</select>
+
+<label for="requirementsfield">Requirements:</label>
+<select id="requirementsfield">
+ <option value=0 selected disabled>select</option>
+</select>
+
+<label for="remunerationfield">Remuneration:</label>
+<select id="remunerationfield">
+ <option value=0 selected disabled>select</option>
+</select>
+
+<button id="searchSubmit">Search</button>
+</form>
+<br>
+
+<div id="jobList">
 <table>
   <thead>
     <tr>
@@ -22,14 +53,9 @@
         <td><%= job.location %></td>
         <td><%= job.requirements %></td>
         <td><%= job.remuneration %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Details', job %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Job', new_job_path %>
+</div>

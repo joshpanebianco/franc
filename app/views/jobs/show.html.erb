@@ -1,29 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h1>Job Title: <%= @job.title %> </h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @job.title %>
-</p>
+<h2>Description: <%= @job.description %> </h2>
 
-<p>
-  <strong>Description:</strong>
-  <%= @job.description %>
-</p>
+<h2>Location: <%= @job.location %></h2>
 
-<p>
-  <strong>Location:</strong>
-  <%= @job.location %>
-</p>
+<h2>Requirements: <%= @job.requirements %></h2>
 
-<p>
-  <strong>Requirements:</strong>
-  <%= @job.requirements %>
-</p>
+<h2>Pay Rate: <%= @job.remuneration %></h2>
 
-<p>
-  <strong>Remuneration:</strong>
-  <%= @job.remuneration %>
-</p>
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<%= link_to 'Apply Now', new_application_path(@application) %>

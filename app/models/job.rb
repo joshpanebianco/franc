@@ -4,4 +4,5 @@ class Job < ActiveRecord::Base
   validates :location, presence: true
   validates :requirements, presence: true
   belongs_to :user
+  has_many :applications, :through => :users 
 end

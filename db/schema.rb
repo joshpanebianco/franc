@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20160418230933) do
     t.integer  "user_id"
     t.string   "contract"
     t.string   "position"
-
   end
 
   create_table "users", force: :cascade do |t|

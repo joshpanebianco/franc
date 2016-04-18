@@ -9,9 +9,17 @@ class JobsController < ApplicationController
       search_term = params[:search_term].downcase
       @jobs = Job.where("lower(title) LIKE ? OR lower(description) LIKE ? OR lower(requirements) LIKE ?", "%#{search_term}%","%#{search_term}%","%#{search_term}%")
     else
-
       @jobs = Job.all
     end
+
+    if params[:search_term].present? && !params[:search_term].blank?
+      search_term = params[:search_term].downcase
+      @jobs = Job.where("lower(description) LIKE ?", "%#{search_term}%")
+    else
+      @jobs = Job.all
+    end
+
+
   end
 
   # GET /jobs/1

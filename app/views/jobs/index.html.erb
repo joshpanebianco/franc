@@ -21,11 +21,11 @@
 </div>
 
  <form action="" id="searchForm">
-<label for="titlefield">Title:</label>
-<select id="titlefield">
+<label for="companyfield">company:</label>
+<select id="companyfield">
  <option value=0 selected disabled>select</option>
  <% Job.all.each do |job| %>
-          <option value="<%= job.id %>"><%= job.title %></option>
+          <option value="<%= job.id %>"><%= job.company %></option>
           <% end %>
 </select>
 
@@ -43,7 +43,7 @@
 <select id="requirementsfield">
  <option value=0 selected disabled>select</option>
  <% Job.all.each do |job| %>
-          <option value="<%= job.id %>"><%= job.title %></option>
+          <option value="<%= job.id %>"><%= job.company %></option>
           <% end %>
 </select>
 
@@ -63,7 +63,7 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Company</th>
       <th>Description</th>
       <th>Location</th>
       <th>Requirements</th>
@@ -75,7 +75,7 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job.title %></td>
+        <td><%= job.company %></td>
         <td><%= job.description %></td>
         <td><%= job.location %></td>
         <td><%= job.requirements %></td>

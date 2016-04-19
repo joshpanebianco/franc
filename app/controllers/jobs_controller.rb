@@ -7,7 +7,7 @@ class JobsController < ApplicationController
 
     if params[:search_term].present? && !params[:search_term].blank?
       search_term = params[:search_term].downcase
-      @jobs = Job.where("lower(title) LIKE ? OR lower(description) LIKE ? OR lower(requirements) LIKE ?", "%#{search_term}%","%#{search_term}%","%#{search_term}%")
+      @jobs = Job.where("lower(company) LIKE ? OR lower(description) LIKE ? OR lower(requirements) LIKE ?", "%#{search_term}%","%#{search_term}%","%#{search_term}%")
     else
       @jobs = Job.all.order("created_at DESC")
     end
@@ -84,6 +84,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :description, :location, :requirements, :remuneration)
+      params.require(:job).permit(:company, :description, :location, :requirements, :remuneration)
     end
 end

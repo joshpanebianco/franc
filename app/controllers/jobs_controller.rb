@@ -12,9 +12,9 @@ class JobsController < ApplicationController
       @jobs = Job.all.order("created_at DESC")
     end
 
-    if params[:search_term].present? && !params[:search_term].blank?
-      search_term = params[:search_term].downcase
-      @jobs = Job.where("lower(description) LIKE ?", "%#{search_term}%")
+    if params[:search_description].present? && !params[:search_description].blank?
+      search_term = params[:search_description].downcase
+      @jobs = Job.where("lower(description) LIKE ?", "%#{search_description}%")
     else
       @jobs = Job.all.order("created_at DESC")
     end

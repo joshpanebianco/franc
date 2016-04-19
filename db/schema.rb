@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160418230933) do
     t.string   "remuneration"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "user_id"
+    t.string   "user_id"
     t.string   "contract"
     t.string   "position"
   end

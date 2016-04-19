@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :users, :only => [:new, :create, :index, :update]
   get '/users/edit' => 'users#edit', :as => 'edit_user'
 
-  resources :applications
-  resources :jobs
+  resources :jobs do
+    resources :applications
+  end
 
   get '/signup' => 'users#new'
 

@@ -1,4 +1,4 @@
-<%= simple_form_for @application do |f| %>
+<%= simple_form_for [@job, @application] do |f| %>
   <%= f.input :first_name, placeholder: 'Daniel' %>
   <%= f.input :last_name, placeholder: 'Bennetts' %>
   <%= f.input :email, placeholder: 'dan@example.com' %>

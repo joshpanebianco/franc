@@ -8,18 +8,14 @@
     <%= label_tag(:q, "General Search:") %>
     <%= text_field_tag(:search_term, params[:search_term]) %>
     <%= submit_tag("Search") %>
-  <% end %>
 </div>
 
   <!--   Company only Search   -->
-  <%= form_tag("/jobs", method: "get") do %>
     <%= label_tag(:q, "Company Search:") %>
     <%= text_field_tag(:search_company, params[:search_company]) %>
     <%= submit_tag("Search") %>
-  <% end %>
 
 <!--   Description only Search   -->
-<%= form_tag("/jobs", method: "get") do %>
   <%= label_tag(:q, "Description Search:") %>
   <%= text_field_tag(:search_description, params[:search_description]) %>
   <%= submit_tag("Search") %>
@@ -55,6 +51,9 @@
 <label for="remunerationfield">Remuneration:</label>
 <select id="remunerationfield">
  <option value=0 selected disabled>select</option>
+ <option value=1>0</option>
+
+
  <% Job.all.each do |job| %>
           <option value="<%= job.id %>"><%= job.remuneration %></option>
           <% end %>

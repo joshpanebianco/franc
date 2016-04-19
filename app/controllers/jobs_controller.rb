@@ -92,8 +92,4 @@ end
     @job = Job.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def job_params
-    params.require(:job).permit(:company, :description, :location, :requirements, :remuneration, :user_id, :position, :contract)
-  end
 end

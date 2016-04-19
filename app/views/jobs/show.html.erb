@@ -1,5 +1,5 @@
 
-<h1>Job company: <%= @job.company %> </h1>
+<h1>Company: <%= @job.company %> </h1>
 
 <h2>Description: <%= @job.description %> </h2>
 
@@ -8,5 +8,9 @@
 <h2>Requirements: <%= @job.requirements %></h2>
 
 <h2>Pay Rate: <%= @job.remuneration %></h2>
+
+<h2>Position: <%= @job.position %></h2>
+
+<h2>Contract: <%= @job.contract %></h2>
 
 <%= link_to 'Apply Now', new_job_application_path(@job) %>

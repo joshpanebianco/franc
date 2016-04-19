@@ -1,4 +1,6 @@
-<div id="tieBackground">
+
+<!-- links job search and create -->
+<!-- <div id="tieBackground">
 <div class="buttonHolder">
 <h1>Welcome To Paradise</h1>
 
@@ -6,4 +8,133 @@
   <%= link_to 'Job Create', new_job_path, :class => "customButtonA" %>
   <%= link_to 'Job Search', jobs_path, :class => "customButtonA" %>
 </div>
-</div>
+</div> -->
+
+<!-- tests -->
+<!-- <%= image_tag("Downcirclearrow.png", :alt => "click to scroll") %>
+<%= image_tag("Franc_logo.png") %> -->
+
+
+<!-- Main app page -->
+
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Mon Apr 18 2016 12:16:01 GMT+0000 (UTC) -->
+<html data-wf-site="5714423a2b490af542a1cd48" data-wf-page="5714423a2b490af542a1cd49">
+<head>
+  <meta charset="utf-8">
+  <title>Franc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <!-- <link rel="stylesheet" type="text/css" href="assets/stylesheets/normalize.css">
+  <link rel="stylesheet" type="text/css" href="assets/stylesheetswebflow.css">
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/franc-app.webflow.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic","Bitter:400,700,400italic","Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","PT Sans:400,400italic,700,700italic","Lobster Two:regular,700","Caveat:regular,700:latin-ext,latin","Fjalla One:regular:latin-ext,latin"]
+      }
+    });
+  </script>
+  <!-- <script type="text/javascript" src="assets/javascripts/modernizr.js"></script> -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico">
+  <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
+</head>
+<body>
+  <div data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="w-nav nav-section">
+    <div class="w-container">
+      <a href="#" data-ix="icon-hover" class="w-nav-brand logo-div"><img width="60" src="assets/images/Franc-logo.png" class="logo-img">
+      </a>
+      <nav role="navigation" class="w-nav-menu"><a href="#home" class="w-nav-link nav-link">Home</a><a href="#video" class="w-nav-link nav-link">About</a><a href="#Message" class="w-nav-link nav-link">Contact</a>
+      </nav>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div id="home" class="w-section hero-section">
+    <div class="w-container hero-container">
+      <div class="w-row header-row">
+        <div class="w-col w-col-8 w-col-stack">
+          <div class="header-div">
+            <h2 data-ix="new-interaction" class="slogan-header">Isn't it about time we got..</h2>
+            <h1 data-ix="franc-on-load" class="franc-header">Franc</h1>
+          </div>
+        </div>
+        <div class="w-col w-col-4 w-col-stack hero-cta-column">
+          <div class="hero-cta-box">
+            <h3 class="cta-box-header">Getting Started</h3><a href="#" class="w-button header-cta-button">Sign In</a><a href="#" class="w-button header-cta-button">Register</a>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-down-div">
+        <a href="#video" class="w-inline-block" data-ix="bounce-click-scroll" class="scroll-down"><%= image_tag("Downcirclearrow.png", size: '60', :alt => "click to scroll") %>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="video" class="w-section video-section">
+    <div class="w-container video-container">
+      <h1 class="video-title">Who Are We?</h1>
+      <div class="about-text">For as long as we can remember, job ads have required businesses to pay for expensive advertisements and then flicking through 100s of resumes, often yielding zero ROI.
+        <br>
+        <br>With our vision we look to move past the traditional means of the job applications process and redefine how employers and potential employees interact together...</div>
+      <h2 class="video-subheader">Introducing job search 2.0 - Franc</h2>
+      <div style="padding-top: 56.27659574468085%;" class="w-embed w-video video-player">
+        <iframe class="embedly-embed" src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fplayer.vimeo.com%2Fvideo%2F40558553&amp;url=https%3A%2F%2Fvimeo.com%2F40558553&amp;image=http%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F280429280_1280.jpg&amp;key=c4e54deccf4d4ec997a64902e9a30300&amp;type=text%2Fhtml&amp;schema=vimeo" scrolling="no" frameborder="0" allowfullscreen=""></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="w-section multi-col-section">
+    <div class="w-container multi-col-container">
+      <div class="w-row multi-col-rows">
+        <div class="w-col w-col-4 multi-col-row"><img width="120" src="assets/images/Humantarget.png" class="multi-col-img">
+          <h4 class="multi-col-header">Targeted Application</h4>
+          <div class="multi-col-text">What you see is what you get. With our service you can cut out first round interviews and endless sorting through resumes</div>
+        </div>
+        <div class="w-col w-col-4 multi-col-row"><img width="120" src="assets/images/Youtube.png" class="multi-col-img">
+          <h4 class="multi-col-header">Video Resume</h4>
+          <div class="multi-col-text">Upload and view video resumes in an "elevator pitch" length, helping you to decide who is right for you and your company</div>
+        </div>
+        <div class="w-col w-col-4 multi-col-row"><img width="120" src="assets/images/Dollarcoin.png" class="multi-col-img">
+          <h4 class="multi-col-header">Savings</h4>
+          <div class="multi-col-text">Savings for employers by significantly cutting down time needed to sort through potential candidates.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section contact-section">
+    <div class="w-container contact-container">
+      <h1 class="contact-header">Contact</h1>
+      <div class="contact-text">If you have any further questions please feel free to fill out the form below and one of our helpful staff will get back to you shortly</div>
+      <div class="w-form contact-form">
+        <form id="email-form" name="email-form" data-name="Email Form">
+          <label for="name" class="field-label">Name:</label>
+          <input id="name" type="text" placeholder="Enter your name" name="name" data-name="Name" class="w-input text-field">
+          <label for="email" class="field-label">Email Address:</label>
+          <input id="email" type="email" placeholder="Enter your email address" name="email" data-name="Email" required="required" class="w-input text-field">
+          <label for="Message" class="field-label">Message:</label>
+          <input id="Message" type="text" placeholder="Please enter your message here " name="Message" data-name="Message" class="w-input text-field">
+          <input type="submit" value="Submit" data-wait="Please wait..." class="w-button contact-button">
+        </form>
+        <div class="w-form-done">
+          <p>Thank you! Your submission has been received!</p>
+        </div>
+        <div class="w-form-fail">
+          <p>Oops! Something went wrong while submitting the form</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section footer-section">
+    <div class="w-container">
+      <div class="footer-text">All Rights Reserved
+        <br>PUNishing Media 2016</div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="assets/javascripts/webflow.js"></script> -->
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</body>
+</html>

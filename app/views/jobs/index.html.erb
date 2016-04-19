@@ -3,22 +3,20 @@
 <h1>Listing Jobs</h1>
 
 <div class="keyword_search">
-
-
 <!--   General Seach   -->
   <%= form_tag("/jobs", method: "get") do %>
     <%= label_tag(:q, "General Search:") %>
     <%= text_field_tag(:search_term, params[:search_term]) %>
     <%= submit_tag("Search") %>
   <% end %>
-</div>
 
-<!-- <%= form_tag("/jobs", method: "get") do %>
-  <%= label_tag(:q, "General Search:") %>
+<%= form_tag("/jobs", method: "get") do %>
+  <%= label_tag(:q, "Description Search:") %>
   <%= text_field_tag(:search_description, params[:search_description]) %>
   <%= submit_tag("Search") %>
 <% end %>
-</div> -->
+</div>
+
 
  <form action="" id="searchForm">
 <label for="companyfield">Company:</label>

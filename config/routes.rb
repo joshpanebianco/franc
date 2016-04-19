@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, :only => [:new, :create, :index, :update]
   get '/users/edit' => 'users#edit', :as => 'edit_user'
-
+  get '/users/applications' => 'users#applications'
   resources :jobs do
     resources :applications
   end

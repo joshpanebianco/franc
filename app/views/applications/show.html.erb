@@ -1,34 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @application.user_id %>
+    <strong>User:</strong>
+    <%= @application.user_id %>
 </p>
 
 <p>
-  <strong>First name:</strong>
-  <%= @application.first_name %>
+    <strong>First name:</strong>
+    <%= @application.first_name %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
-  <%= @application.last_name %>
+    <strong>Last name:</strong>
+    <%= @application.last_name %>
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @application.email %>
+    <strong>Email:</strong>
+    <%= @application.email %>
 </p>
 
 <p>
-  <strong>Videourl:</strong>
-  <%= @application.videoURL %>
+    <strong>Videourl:</strong>
+    <%= @application.videoURL %>
 </p>
 
 <p>
-  <strong>Comments:</strong>
-  <%= @application.comments %>
+    <strong>Comments:</strong>
+    <%= @application.comments %>
 </p>
 
-<%= link_to 'Edit', edit_job_application_path(@job, @application) %> |
+<p>
+Application Rating: <%= rating_for @application, "application" %>
+</p>
+
+<%= link_to 'Edit', edit_job_application_path(@job, @application) %>
+|
 <%= link_to 'Back', job_applications_path(@job) %>

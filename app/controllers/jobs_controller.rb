@@ -4,10 +4,14 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
 
+    if params[:commit].present?
       @jobs = Job.keyword_search(params[:search_term])
                  .company_name(params[:search_company])
                  .description(params[:search_description])
-
+                 .salary(params[:salary][:salary_range_min],params[:salary][:salary_range_max])
+       else
+        @jobs = Job.all
+      end
 
 
       @salary_range_min = [['--', ''],['0k', 0], ['10k', 10000], ['20k', 20000], ['30k', 30000], ['40k', 40000], ['50k', 500000], ['60k', 60000], ['70k', 70000], ['80k', 80000], ['90k', 90000], ['100k', 100000], ['150k', 150000]]

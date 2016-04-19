@@ -16,8 +16,9 @@
 <!--   Description only Search   -->
   <%= label_tag(:q, "Description Search:") %>
   <%= text_field_tag(:search_description, params[:search_description]) %>
-
-
+<br>
+  <!--   Salary Search   -->
+  <%= label_tag(:q, "Salary Search:") %>
   <%= select("salary", 'salary_range_min', @salary_range_min) %>
   <%= select("salary", 'salary_range_max', @salary_range_max) %>
 

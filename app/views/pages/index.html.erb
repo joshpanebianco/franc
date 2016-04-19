@@ -44,7 +44,7 @@
 <body>
   <div data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="w-nav nav-section">
     <div class="w-container">
-      <a href="#" data-ix="icon-hover" class="w-nav-brand logo-div"><img width="60" src="assets/images/Franc-logo.png" class="logo-img">
+      <a href="#" data-ix="icon-hover" class="w-nav-brand logo-div"><%= image_tag("Franc-logo.png", size: '60', :alt => "click to scroll", :class => "logo-img") %>
       </a>
       <nav role="navigation" class="w-nav-menu"><a href="#home" class="w-nav-link nav-link">Home</a><a href="#video" class="w-nav-link nav-link">About</a><a href="#Message" class="w-nav-link nav-link">Contact</a>
       </nav>
@@ -64,7 +64,7 @@
         </div>
         <div class="w-col w-col-4 w-col-stack hero-cta-column">
           <div class="hero-cta-box">
-            <h3 class="cta-box-header">Getting Started</h3><a href="#" class="w-button header-cta-button">Sign In</a><a href="#" class="w-button header-cta-button">Register</a>
+            <h3 class="cta-box-header">Getting Started</h3><a href="#" class="header-cta-button">Sign In</a><a href="#" class="header-cta-button">Register</a>  <%= link_to 'Job Search', jobs_path, :class => "header-cta-button" %>  <%= link_to 'Job Create', new_job_path, :class => "header-cta-button" %>
           </div>
         </div>
       </div>
@@ -89,15 +89,15 @@
   <div class="w-section multi-col-section">
     <div class="w-container multi-col-container">
       <div class="w-row multi-col-rows">
-        <div class="w-col w-col-4 multi-col-row"><img width="120" src="assets/images/Humantarget.png" class="multi-col-img">
+        <div class="w-col w-col-4 multi-col-row"><%= image_tag("Humantarget.png", size: '120', :alt => "target", :class => "multi-col-img") %>
           <h4 class="multi-col-header">Targeted Application</h4>
           <div class="multi-col-text">What you see is what you get. With our service you can cut out first round interviews and endless sorting through resumes</div>
         </div>
-        <div class="w-col w-col-4 multi-col-row"><img width="120" src="assets/images/Youtube.png" class="multi-col-img">
+        <div class="w-col w-col-4 multi-col-row"><%= image_tag("Youtube.png", size: '120', :alt => "video", :class => "multi-col-img") %>
           <h4 class="multi-col-header">Video Resume</h4>
           <div class="multi-col-text">Upload and view video resumes in an "elevator pitch" length, helping you to decide who is right for you and your company</div>
         </div>
-        <div class="w-col w-col-4 multi-col-row"><img width="120" src="assets/images/Dollarcoin.png" class="multi-col-img">
+        <div class="w-col w-col-4 multi-col-row"><%= image_tag("Dollarcoin.png", size: '120', :alt => "save", :class => "multi-col-img") %>
           <h4 class="multi-col-header">Savings</h4>
           <div class="multi-col-text">Savings for employers by significantly cutting down time needed to sort through potential candidates.</div>
         </div>
@@ -108,7 +108,7 @@
     <div class="w-container contact-container">
       <h1 class="contact-header">Contact</h1>
       <div class="contact-text">If you have any further questions please feel free to fill out the form below and one of our helpful staff will get back to you shortly</div>
-      <div class="w-form contact-form">
+      <div class="contact-form">
         <form id="email-form" name="email-form" data-name="Email Form">
           <label for="name" class="field-label">Name:</label>
           <input id="name" type="text" placeholder="Enter your name" name="name" data-name="Name" class="w-input text-field">
@@ -116,7 +116,7 @@
           <input id="email" type="email" placeholder="Enter your email address" name="email" data-name="Email" required="required" class="w-input text-field">
           <label for="Message" class="field-label">Message:</label>
           <input id="Message" type="text" placeholder="Please enter your message here " name="Message" data-name="Message" class="w-input text-field">
-          <input type="submit" value="Submit" data-wait="Please wait..." class="w-button contact-button">
+          <input type="submit" value="Submit" data-wait="Please wait..." class="contact-button">
         </form>
         <div class="w-form-done">
           <p>Thank you! Your submission has been received!</p>

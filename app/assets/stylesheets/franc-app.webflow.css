@@ -1,7 +1,8 @@
 .hero-section {
   height: auto;
-  background-image: -webkit-linear-gradient(270deg, rgba(22, 45, 121, .2), hsla(0, 0%, 100%, .5)), url('../images/hero-bg.jpg');
-  background-image: linear-gradient(180deg, rgba(22, 45, 121, .2), hsla(0, 0%, 100%, .5)), url('../images/hero-bg.jpg');
+  background-image: -webkit-linear-gradient(270deg, rgba(22, 45, 121, .2), hsla(0, 0%, 100%, .5)), url("hero-bg.jpg");
+
+  background-image: linear-gradient(180deg, rgba(22, 45, 121, .2), hsla(0, 0%, 100%, .5)), url("hero-bg.jpg");
   background-position: 0px 0px, 50% 100%;
   background-size: auto, cover;
 }
@@ -455,4 +456,3 @@ html.w-mod-js *[data-ix="franc-on-load"] {
     line-height: 32px;
   }
 }
-

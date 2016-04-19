@@ -13,6 +13,13 @@
   <% end %>
 </div>
 
+<%= form_tag("/jobs", method: "get") do %>
+  <%= label_tag(:q, "General Search:") %>
+  <%= text_field_tag(:search_description, params[:search_description]) %>
+  <%= submit_tag("Search") %>
+<% end %>
+</div>
+
  <form action="" id="searchForm">
 <label for="titlefield">Title:</label>
 <select id="titlefield">

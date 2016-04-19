@@ -4,7 +4,8 @@ class ApplicationsController < ApplicationController
   # GET /applications
   # GET /applications.json
   def index
-    @applications = Application.all
+    @job = Job.find(params[:job_id])
+    @applications = @job.applications
   end
 
   # GET /applications/1
@@ -14,7 +15,8 @@ class ApplicationsController < ApplicationController
 
   # GET /applications/new
   def new
-    @application = Application.new
+    @application = Application.new()
+    @job = Job.find(params[:job_id])
   end
 
   # GET /applications/1/edit
@@ -24,11 +26,13 @@ class ApplicationsController < ApplicationController
   # POST /applications
   # POST /applications.json
   def create
+    @job = Job.find(params[:job_id])
     @application = Application.new(application_params)
-
     respond_to do |format|
       if @application.save
-        format.html { redirect_to @application, notice: 'Application was successfully created.' }
+        @current_user.applications << @application
+        @job.applications << @application
+        format.html { redirect_to job_application_path(@job, @application), notice: 'Application was successfully created.' }
         format.json { render :show, status: :created, location: @application }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class ApplicationsController < ApplicationController
   def update
     respond_to do |format|
       if @application.update(application_params)
-        format.html { redirect_to @application, notice: 'Application was successfully updated.' }
+        format.html { redirect_to job_application_path(@application.job, @application), notice: 'Application was successfully updated.' }
         format.json { render :show, status: :ok, location: @application }
       else
         format.html { render :edit }
@@ -56,7 +60,7 @@ class ApplicationsController < ApplicationController
   def destroy
     @application.destroy
     respond_to do |format|
-      format.html { redirect_to applications_url, notice: 'Application was successfully destroyed.' }
+      format.html { redirect_to job_applications_url, notice: 'Application was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,10 +69,11 @@ class ApplicationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_application
       @application = Application.find(params[:id])
+      @job = Job.find(params[:job_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def application_params
-      params.require(:application).permit(:user_id, :first_name, :last_name, :email, :videoURL, :comments)
+      params.require(:application).permit(:user_id, :first_name, :last_name, :email, :videoURL, :comments, :job_id)
     end
 end

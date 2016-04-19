@@ -4,23 +4,29 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-
+    # General Search
     if params[:search_term].present? && !params[:search_term].blank?
       search_term = params[:search_term].downcase
-      @jobs = Job.where("lower(company) LIKE ? OR lower(description) LIKE ? OR lower(requirements) LIKE ?", "%#{search_term}%","%#{search_term}%","%#{search_term}%")
+      @jobs = Job.where('lower(company) LIKE ? OR lower(description) LIKE ? OR lower(requirements) LIKE ?', "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
     else
-      @jobs = Job.all.order("created_at DESC")
-    end
 
-    if params[:search_description].present? && !params[:search_description].blank?
-      search_description = params[:search_description].downcase
-      @jobs = Job.where("lower(description) LIKE ?", "%#{search_description}%")
-    else
-      @jobs = Job.all.order("created_at DESC")
-    end
+      # Company Search
+      if params[:search_company].present? && !params[:search_company].blank?
+        search_company = params[:search_company].downcase
+        @jobs = Job.where('lower(company) LIKE ?', "%#{search_company}%")
+      else
 
+        # Description Search
+        if params[:search_description].present? && !params[:search_description].blank?
+          search_description = params[:search_description].downcase
+          @jobs = Job.where('lower(description) LIKE ?', "%#{search_description}%")
+        else
+          @jobs = Job.all.order('created_at DESC')
+        end
 
   end
+end
+end
 
   # GET /jobs/1
   # GET /jobs/1.json
@@ -77,13 +83,14 @@ class JobsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_job
-      @job = Job.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def job_params
-      params.require(:job).permit(:company, :description, :location, :requirements, :remuneration)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_job
+    @job = Job.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def job_params
+    params.require(:job).permit(:company, :description, :location, :requirements, :remuneration)
+  end
 end

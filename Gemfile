@@ -34,6 +34,8 @@ gem 'lolcommits', '~> 0.6.5'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# gem 'has_scope'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

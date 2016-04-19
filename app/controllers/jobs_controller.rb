@@ -1,30 +1,32 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-
   # GET /jobs
   # GET /jobs.json
   def index
+
+
+
+    @jobs = Job.all.order('created_at DESC')
+
     # General Search
     if params[:search_term].present? && !params[:search_term].blank?
       search_term = params[:search_term].downcase
       @jobs = Job.where('lower(company) LIKE ? OR lower(description) LIKE ? OR lower(requirements) LIKE ?', "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
-    else
+    end
 
       # Company Search
       if params[:search_company].present? && !params[:search_company].blank?
         search_company = params[:search_company].downcase
         @jobs = Job.where('lower(company) LIKE ?', "%#{search_company}%")
-      else
+      end
 
         # Description Search
         if params[:search_description].present? && !params[:search_description].blank?
           search_description = params[:search_description].downcase
           @jobs = Job.where('lower(description) LIKE ?', "%#{search_description}%")
-        else
-          @jobs = Job.all.order('created_at DESC')
-        end
 
-  end
+
+
 end
 end
 

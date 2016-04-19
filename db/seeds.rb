@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Job.destroy_all
-job1 = Job.create(title: 'General Assembly', description: 'A cool place to work', location: 'Sydney', requirements: 'Web Development', remuneration: '$50,000')
-job2 = Job.create(title: 'Pied Piper', description: 'A video compression company', location: 'Silicon Valley', requirements: 'Javascript, React', remuneration: '$75,000')
-job3 = Job.create(title: 'Ansarada', description: 'If you love SQL, you will love us', location: 'The Rocks', requirements: 'Web Development', remuneration: '$50,000')
+job1 = Job.create(company: 'General Assembly', description: 'A cool place to work', location: 'Sydney', requirements: 'Web Development', remuneration: '$50,000', position: 'Junior Web Developer', contract: 'Full-Time' )
+job2 = Job.create(company: 'Pied Piper', description: 'A video compression company', location: 'Silicon Valley', requirements: 'Javascript, React', remuneration: '$75,000', position: 'Javascript Developer', contract: 'Part-Time')
+job3 = Job.create(company: 'Ansarada', description: 'If you love SQL, you will love us', location: 'The Rocks', requirements: 'Web Development', remuneration: '$50,000', position: 'Ruby on Rails Developer', contract: 'Casual')
 
 User.destroy_all
 daniel = User.create(email: 'daniel@ga.co', password: 'chicken', password_confirmation: 'chicken', first_name: 'Daniel', last_name: 'Bennetts', address: 'Sydney')

@@ -36,6 +36,8 @@ gem 'ratyrate'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# gem 'has_scope'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

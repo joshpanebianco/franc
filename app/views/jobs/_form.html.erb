@@ -3,6 +3,8 @@
     <%= f.input :description %>
     <%= f.input :location %>
     <%= f.input :requirements %>
-    <%= f.input :remuneration %>
+    <%= f.input :remuneration, :as => :numeric %>
+    <%= f.input :position %>
+    <%= f.input :contract %>
     <%= f.button :submit %>
     <% end %>

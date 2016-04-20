@@ -38,6 +38,11 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
 
+    def applications
+      @applications = @current_user.applications
+      # render :template => 'applications/index'
+      
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.

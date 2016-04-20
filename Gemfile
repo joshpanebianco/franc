@@ -31,8 +31,12 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'lolcommits', '~> 0.6.5'
 
+gem 'ratyrate'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
+
+# gem 'has_scope'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

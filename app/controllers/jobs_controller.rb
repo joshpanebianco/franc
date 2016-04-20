@@ -1,31 +1,25 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-
   # GET /jobs
   # GET /jobs.json
   def index
-    # General Search
-    if params[:search_term].present? && !params[:search_term].blank?
-      search_term = params[:search_term].downcase
-      @jobs = Job.where('lower(company) LIKE ? OR lower(description) LIKE ? OR lower(requirements) LIKE ?', "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
-    else
 
-      # Company Search
-      if params[:search_company].present? && !params[:search_company].blank?
-        search_company = params[:search_company].downcase
-        @jobs = Job.where('lower(company) LIKE ?', "%#{search_company}%")
-      else
+    if params[:commit].present?
+      @jobs = Job.keyword_search(params[:search_term])
+                 .company_name(params[:search_company])
+                 .description(params[:search_description])
+                 .salary(params[:salary][:salary_range_min],params[:salary][:salary_range_max])
+       else
+        @jobs = Job.all
+      end
 
-        # Description Search
-        if params[:search_description].present? && !params[:search_description].blank?
-          search_description = params[:search_description].downcase
-          @jobs = Job.where('lower(description) LIKE ?', "%#{search_description}%")
-        else
-          @jobs = Job.all.order('created_at DESC')
-        end
 
-  end
-end
+      @salary_range_min = [['--', ''],['0k', 0], ['10k', 10000], ['20k', 20000], ['30k', 30000], ['40k', 40000], ['50k', 500000], ['60k', 60000], ['70k', 70000], ['80k', 80000], ['90k', 90000], ['100k', 100000], ['150k', 150000]]
+
+   @salary_range_max = [['--', ''],['30k', 30000], ['40k', 40000], ['50k', 500000], ['60k', 60000], ['70k', 70000], ['80k', 80000], ['90k', 90000], ['100k', 100000], ['120k', 120000], ['130k', 130000], ['140k', 140000], ['150k', 150000], ['200k', 200000], ['250k', 250000]]
+
+
+
 end
 
   # GET /jobs/1
@@ -83,17 +77,14 @@ end
   end
 
   private
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:company, :description, :location, :requirements, :remuneration, :user_id)
+      params.require(:job).permit(:company, :description, :location, :requirements, :remuneration, :user_id, :position, :contract)
     end
   # Use callbacks to share common setup or constraints between actions.
   def set_job
     @job = Job.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def job_params
-    params.require(:job).permit(:company, :description, :location, :requirements, :remuneration, :user_id)
-  end
 end

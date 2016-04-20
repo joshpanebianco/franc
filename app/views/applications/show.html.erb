@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+
   <strong>User:</strong>
   <%= @application.email %>
 </p>
@@ -19,12 +20,18 @@
 
   <%= content_tag(:iframe, '', src: "https://www.youtube.com/embed/" + @application.videoURL.scan(/(.+\=)(.+)/)[0][1] ,
   width: 560, height: 315, frameborder: 0) %>
+
 </p>
 
 <p>
-  <strong>Comments:</strong>
-  <%= @application.comments %>
+    <strong>Comments:</strong>
+    <%= @application.comments %>
 </p>
 
-<%= link_to 'Edit', edit_job_application_path(@job, @application) %> |
+<p>
+Application Rating: <%= rating_for @application, "application" %>
+</p>
+
+<%= link_to 'Edit', edit_job_application_path(@job, @application) %>
+|
 <%= link_to 'Back', job_applications_path(@job) %>

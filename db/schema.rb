@@ -11,16 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419065926) do
+ActiveRecord::Schema.define(version: 20160420014356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "applications", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
     t.string   "videoURL"
     t.text     "comments"
     t.datetime "created_at", null: false

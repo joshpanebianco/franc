@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     def create
       @user = User.new user_params
     if @user.save
+      UserMailer.welcome(@user).deliver_now
       session[:user_id] = @user.id
       redirect_to root_path
     else
@@ -41,7 +42,11 @@ class UsersController < ApplicationController
     def applications
       @applications = @current_user.applications
       # render :template => 'applications/index'
-      
+
+    end
+
+    def user_jobs
+      @jobs = @current_user.jobs
     end
 
   private
@@ -52,7 +57,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation,)
+      params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name)
     end
 
     def authorise

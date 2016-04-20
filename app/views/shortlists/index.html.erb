@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Shortlists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Post</th>
+      <th>Shortlist</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shortlists.each do |shortlist| %>
+      <tr>
+        <td><%= shortlist.user_id %></td>
+        <td><%= shortlist.post_id %></td>
+        <td><%= shortlist.shortlist %></td>
+        <td><%= link_to 'Show', shortlist %></td>
+        <td><%= link_to 'Edit', edit_shortlist_path(shortlist) %></td>
+        <td><%= link_to 'Destroy', shortlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shortlist', new_shortlist_path %>

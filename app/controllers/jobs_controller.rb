@@ -52,9 +52,11 @@ end
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
+    #@current_user
 
     respond_to do |format|
       if @job.save
+
         @job_created = true
         format.html { redirect_to @job, flash: { success: 'Job was successfully created.' }
           # raise

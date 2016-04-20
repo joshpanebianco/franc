@@ -49,6 +49,7 @@ app10 = Application.create(videoURL: 'https://example.com', comments: 'etc etc' 
 app11 = Application.create(videoURL: 'https://example.com', comments: 'etc etc' )
 
 
+
 daniel.jobs << job1
 daniel.applications << app1
 

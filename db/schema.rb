@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20160420065909) do
 
   # These are extensions that must be enabled in order to support this database
@@ -20,9 +21,10 @@ ActiveRecord::Schema.define(version: 20160420065909) do
     t.integer  "user_id"
     t.string   "videoURL"
     t.text     "comments"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "job_id"
+    t.boolean  "shortlist",  default: false
   end
 
   create_table "average_caches", force: :cascade do |t|
@@ -79,6 +81,14 @@ ActiveRecord::Schema.define(version: 20160420065909) do
   end
 
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type", using: :btree
+
+  create_table "shortlists", force: :cascade do |t|
+    t.string   "user_id"
+    t.string   "post_id"
+    t.boolean  "shortlist",  default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.text     "email"

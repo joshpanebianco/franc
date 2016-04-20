@@ -2,64 +2,36 @@
 
 <h1>Listing Jobs</h1>
 
+
+<div class="jobSearchFields">
 <div class="keyword_search">
 <!--   General Search   -->
   <%= form_tag("/jobs", method: "get") do %>
     <%= label_tag(:q, "General Search:") %>
     <%= text_field_tag(:search_term, params[:search_term]) %>
     <%= submit_tag("Search") %>
+<br>
+<br>
 
   <!--   Company only Search   -->
-    <%= label_tag(:q, "Company Search:") %>
+    <%= label_tag(:q, "Company Search:", class:"test") %>
     <%= text_field_tag(:search_company, params[:search_company]) %>
 
 <!--   Description only Search   -->
-  <%= label_tag(:q, "Description Search:") %>
+  <%= label_tag(:q, "Description Search:", class:"test") %>
   <%= text_field_tag(:search_description, params[:search_description]) %>
 <br>
   <!--   Salary Search   -->
-  <%= label_tag(:q, "Salary Search:") %>
+  <%= label_tag(:q, "Salary Search:", class:'test') %>
   <%= select("salary", 'salary_range_min', @salary_range_min) %>
   <%= select("salary", 'salary_range_max', @salary_range_max) %>
 
-  <br>
+<br>
   <%= submit_tag("Search") %>
 <% end %>
 </div>
+</div>
 
-
-
- <!-- <form action="" id="searchForm">
-<label for="companyfield">Company:</label>
-<select id="companyfield">
- <option value=0 selected disabled>select</option>
- <% Job.all.each do |job| %>
-          <option value="<%= job.id %>"><%= job.company %></option>
-          <% end %>
-</select>
-
-
-<label for="locationfield">Location:</label>
-<select id="locationfield">
- <option value=0 selected disabled>select</option>
- <% Job.all.each do |job| %>
-          <option value="<%= job.id %>"><%= job.location %></option>
-          <% end %>
-</select>
-
-<label for="requirementsfield">Requirements:</label>
-<select id="requirementsfield">
- <option value=0 selected disabled>select</option>
- <% Job.all.each do |job| %>
-          <option value="<%= job.id %>"><%= job.company %></option>
-          <% end %>
-</select>
-
-
-</select>
-
-<button id="searchSubmit">Search</button>
-</form> -->
 <br>
 
 <div id="jobList">

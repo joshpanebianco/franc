@@ -36,6 +36,7 @@ end
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+
   end
 
   # GET /jobs/new
@@ -54,7 +55,11 @@ end
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
+        @job_created = true
+        format.html { redirect_to @job, flash: { success: 'Job was successfully created.' }
+          # raise
+
+        }
         format.json { render :show, status: :created, location: @job }
       else
         format.html { render :new }

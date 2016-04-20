@@ -15,4 +15,7 @@ class Job < ActiveRecord::Base
 #  scope :salary, ->(search) {where("remuneration > ? AND remuneration <= ")}
   scope :salary, ->(min, max) {where("remuneration BETWEEN ? AND ?", "#{min}", "#{max}" ) if !min.blank? && !max.blank?}
 
+
+
+
 end

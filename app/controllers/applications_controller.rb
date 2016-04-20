@@ -30,6 +30,7 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
     respond_to do |format|
       if @application.save
+        UserMailer.new_application(@current_user, @job, @application).deliver_now
         @current_user.applications << @application
         @job.applications << @application
         format.html { redirect_to job_application_path(@job, @application), notice: 'Application was successfully created.' }

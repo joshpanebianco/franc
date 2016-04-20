@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @shortlist.user_id %>
+</p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @shortlist.post_id %>
+</p>
+
+<p>
+  <strong>Shortlist:</strong>
+  <%= @shortlist.shortlist %>
+</p>
+
+<%= link_to 'Edit', edit_shortlist_path(@shortlist) %> |
+<%= link_to 'Back', shortlists_path %>

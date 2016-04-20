@@ -41,7 +41,11 @@ class UsersController < ApplicationController
     def applications
       @applications = @current_user.applications
       # render :template => 'applications/index'
-      
+
+    end
+
+    def user_jobs
+      @jobs = @current_user.jobs
     end
 
   private

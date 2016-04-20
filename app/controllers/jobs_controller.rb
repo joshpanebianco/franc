@@ -40,9 +40,11 @@ end
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
+    #@current_user
 
     respond_to do |format|
       if @job.save
+        @job.users << @current_user
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
         format.json { render :show, status: :created, location: @job }
       else

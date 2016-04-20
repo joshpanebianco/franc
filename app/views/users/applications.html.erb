@@ -19,9 +19,9 @@
     <% @applications.each do |application| %>
       <tr>
         <td><%= application.user_id %></td>
-        <td><%= application.first_name %></td>
-        <td><%= application.last_name %></td>
-        <td><%= application.email %></td>
+        <td><%= application.user.first_name %></td>
+        <td><%= application.user.last_name %></td>
+        <td><%= application.user.email %></td>
         <td><%= application.videoURL %></td>
         <td><%= application.comments %></td>
         <td><%= link_to 'Show', job_application_path(application.job, application) %></td>

@@ -1,27 +1,26 @@
-== README
+== Franc
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Franc aims to create a web platform for job search 2.0
 
-Things you may want to cover:
+Users can submit a video cover letter rather than tradition means that don't describe how well a potential employee would fit within a company
 
-* Ruby version
+Rails based database
 
-* System dependencies
+Please see Heroku deployment of app @ https://francjobs.herokuapp.com
 
-* Configuration
+Database:
 
-* Database creation
+* postgresql
 
-* Database initialization
+Gems used:
 
-* How to run the test suite
+* rails_12factor
 
-* Services (job queues, cache servers, search engines, etc.)
+* 'simple_form', '~> 3.2', '>= 3.2.1'
 
-* Deployment instructions
+* 'lolcommits', '~> 0.6.5'
 
-* ...
+* ratyrate
 
 
 Please feel free to use a different markup language if you do not plan to run

@@ -2,27 +2,23 @@
 
 <p>
   <strong>User:</strong>
-  <%= @application.user_id %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @application.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @application.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
   <%= @application.email %>
 </p>
 
 <p>
-  <strong>Videourl:</strong>
-  <%= @application.videoURL %>
+  <strong>Name:</strong>
+  <%= @application.first_name + " " + @application.last_name %>
+</p>
+
+<p>
+  <strong>Video:</strong>
+  <br>
+  <!-- <%= content_tag(:iframe, '', src: "https://www.youtube.com/embed/V1uDTbb-VfI",
+                     width: 560, height: 315, frameborder: 0) %> -->
+  <!-- <%= @application.videoURL %> -->
+
+  <%= content_tag(:iframe, '', src: "https://www.youtube.com/embed/" + @application.videoURL.scan(/(.+\=)(.+)/)[0][1] ,
+  width: 560, height: 315, frameborder: 0) %>
 </p>
 
 <p>

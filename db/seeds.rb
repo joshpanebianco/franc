@@ -22,6 +22,7 @@ job13 = Job.create(company: 'Catfe', description: 'If you have previously worked
 job14 = Job.create(company: 'Zzap', description: 'Seeking a new member to join the team', location: 'Port Macquarie', requirements: 'Loathing of insects', remuneration: '65000', position: 'Insect Exterminator', contract: 'Full-Time')
 job15 = Job.create(company: 'Snag Sausage', description: 'Our new locations is seeking team members now!', location: 'Neutral Bay', requirements: '1 years hospitality experience', remuneration: '45000', position: 'Manager', contract: 'Full-Time')
 job16 = Job.create(company: 'Red Oblong Blocks', description: 'We make bricks', location: 'Eastwood', requirements: 'Two years Bricklaying experieence', remuneration: '70000', position: 'Brick Manager', contract: 'Full-Time')
+job17 = Job.create(company: 'Chode Force', description: 'We are here to help', location: 'North Bridge', requirements: 'Tfweerieence', remuneration: '85000', position: 'Kill Me', contract: 'Full-Time')
 
 User.destroy_all
 daniel = User.create(email: 'daniel@ga.co', password: 'chicken', password_confirmation: 'chicken', first_name: 'Daniel', last_name: 'Bennetts', address: 'Sydney')

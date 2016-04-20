@@ -9,6 +9,17 @@
 <body>
   <%= link_to "Home", root_path %>
 
+  <div data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="w-nav nav-section">
+    <div class="w-container">
+      <a href="#" data-ix="icon-hover" class="w-nav-brand logo-div"><%= image_tag("Franc-logo.png", size: '60', :alt => "click to scroll", :class => "logo-img") %>
+      </a>
+      <nav role="navigation" class="w-nav-menu"><a href="#home" class="w-nav-link nav-link">Home</a><a href="#video" class="w-nav-link nav-link">About</a><a href="#Message" class="w-nav-link nav-link">Contact</a>
+      </nav>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
   <% if @current_user.present? %>
 
 

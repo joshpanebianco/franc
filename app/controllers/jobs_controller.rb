@@ -5,20 +5,31 @@ class JobsController < ApplicationController
   def index
 
     if params[:commit].present?
+      salary_min = params[:salary][:salary_range_min]
+      salary_max = params[:salary][:salary_range_max]
+
+      if salary_max != "" && salary_min == ""
+        salary_min = 0
+      end
+
+      if salary_max == "" && salary_min != ""
+        salary_max = 10000000
+      end
+
       @jobs = Job.keyword_search(params[:search_term])
                  .company_name(params[:search_company])
                  .description(params[:search_description])
-                 .salary(params[:salary][:salary_range_min],params[:salary][:salary_range_max])
-       else
-        @jobs = Job.all
-      end
+                 .salary(salary_min,salary_max)
+
+    else
+      @jobs = Job.all
+    end
 
 
-      @salary_range_min = [['--', ''],['0k', 0], ['10k', 10000], ['20k', 20000], ['30k', 30000], ['40k', 40000], ['50k', 500000], ['60k', 60000], ['70k', 70000], ['80k', 80000], ['90k', 90000], ['100k', 100000], ['150k', 150000]]
 
-   @salary_range_max = [['--', ''],['30k', 30000], ['40k', 40000], ['50k', 500000], ['60k', 60000], ['70k', 70000], ['80k', 80000], ['90k', 90000], ['100k', 100000], ['120k', 120000], ['130k', 130000], ['140k', 140000], ['150k', 150000], ['200k', 200000], ['250k', 250000]]
+      @salary_range_min = [['--', ''],['0k', 0], ['10k', 10000], ['20k', 20000], ['30k', 30000], ['40k', 40000], ['50k', 50000], ['60k', 60000], ['70k', 70000], ['80k', 80000], ['90k', 90000], ['100k', 100000], ['150k', 150000]]
 
-
+      @salary_range_max = [['--', ''],['30k', 30000], ['40k', 40000], ['50k', 50000], ['60k', 60000], ['70k', 70000], ['80k', 80000], ['90k', 90000], ['100k', 100000], ['120k', 120000], ['130k', 130000], ['140k', 140000], ['150k', 150000], ['200k', 200000], ['250k', 250000]]
 
 end
 
@@ -91,5 +102,7 @@ end
   def set_job
     @job = Job.find(params[:id])
   end
+
+
 
 end

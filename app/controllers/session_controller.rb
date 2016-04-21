@@ -8,9 +8,9 @@ class SessionController < ApplicationController
      if user.present? && user.authenticate(params[:password])
        session[:user_id] = user.id
        #log em in
-       redirect_to root_path
+       redirect_to jobs_path
      else
-       flash[:error] = "Oops"
+       flash[:error] = "Login credentials invalid"
        redirect_to login_path
    end
   end

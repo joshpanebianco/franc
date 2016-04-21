@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.welcome(@user).deliver_now
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to jobs_path
     else
       render :new
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     def update
       user = @current_user
       user.update user_params
-      redirect_to root_path
+      redirect_to jobs_path
     end
 
     def applications

@@ -20,19 +20,20 @@
      <span class="icon-bar"></span>
    </button>
    <a class="navbar-brand" href="/"><i class="fa fa-film" aria-hidden="true"></i> Franc</a>
-   
+
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
    <ul class="nav navbar-nav navbar-right">
 
         <% if @current_user.present? %>
 
 
-                   <li><%= link_to "Logout #{@current_user.email}", login_path, :method => :delete %></li>
+                   <li><%= link_to "Logout #{@current_user.first_name}", login_path, :method => :delete %></li>
+                   <li><%= image_tag @current_user.avatar_url(:display), :class => "profile_pic" %></li>
                    <li><%= link_to "Edit Profile", edit_user_path(@current_user) %></li>
                    <li><%= link_to "View Applications", users_applications_path %></li>
-
+                    <li> <%= link_to "View Your Jobs", users_user_jobs_path %></li>
                  <% else %>
-                   <li><%= link_to "Sign up", signup_path %></li>
+                   <li><%= link_to "Register", signup_path %></li>
                    <li><%= link_to "Login", login_path %></li>
 
 
@@ -43,6 +44,19 @@
 
   </div>
   </nav>
+  <!-- <%= link_to "Home", root_path %>
+  <% if @current_user.present? %>
+
+
+             <%= link_to "Logout #{@current_user.email}", login_path, :method => :delete %>
+             <%= link_to "Edit Profile", edit_user_path(@current_user) %>
+             <%= link_to "View Applications", users_applications_path %>
+              <%= link_to "View Your Jobs", users_user_jobs_path %>
+           <% else %>
+             <%= link_to "Sign up", signup_path %>
+             <%= link_to "Login", login_path %>
+
+
 
 
 <%= yield %>

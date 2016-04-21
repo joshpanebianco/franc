@@ -56,7 +56,7 @@ end
 
     respond_to do |format|
       if @job.save
-
+        @job.users << @current_user
         @job_created = true
         format.html { redirect_to @job, flash: { success: 'Job was successfully created.' }
           # raise

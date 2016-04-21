@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 <div class="container">
 <div class="row">
 <div class="custom-form">
 <h1>Sign Up</h1>
+=======
+<h1>Register</h1>
+>>>>>>> 179d506c8c15175adf08d249329edba185b79fc7
 
 <% if @user.errors.any? %>
 <ol>
@@ -37,12 +41,24 @@
             <%= f.text_field :last_name, :required => true, :class => 'form-control' %>
           </fieldset>
 
+<<<<<<< HEAD
           <fieldset class="form-group">
             <%= f.label :image%>
             <%= f.url_field :image, :class => 'form-control' %>
           </fieldset>
 
             <%= f.submit "Login", :class => 'btn btn-primary' %>
+=======
+            <%= f.label :date_of_birth %>
+            <%= f.date_field :dob, :value => Time.now.strftime('%Y-%m-%d') %>
+
+            <%= f.label :address %>
+            <%= f.text_field :address, :required => true %>
+
+            <%= f.label :avatar%>
+            <%= f.file_field :avatar %>
+            <%= f.submit "Register" %>
+>>>>>>> 179d506c8c15175adf08d249329edba185b79fc7
           <% end %>
 
 </div>

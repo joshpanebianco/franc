@@ -29,6 +29,7 @@
     color: white;
 }
 
+
 .thead-inverse th {
     color: #fff;
     background-color: #373a3c;
@@ -36,4 +37,8 @@
 
 .search_page {
   max-width: 33%;
+}
+.profile_pic {
+  max-width: 50px;
+  border-radius: 50%
 }

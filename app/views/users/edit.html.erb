@@ -9,8 +9,20 @@
 <%= f.label :password_confirmation %>
 <%= f.password_field :password_confirmation %>
 
-<%= f.label :image%>
-<%= f.url_field :image %>
+<%= f.label :first_name %>
+<%= f.text_field :first_name, :required => true %>
+
+<%= f.label :last_name %>
+<%= f.text_field :last_name, :required => true %>
+
+<%= f.label :date_of_birth %>
+<%= f.date_field :dob, :value => Time.now.strftime('%Y-%m-%d') %>
+
+<%= f.label :address %>
+<%= f.text_field :address, :required => true %>
+
+<%= f.label :avatar%>
+<%= f.file_field :avatar %>
 
 <%= f.submit %>
 <% end %>

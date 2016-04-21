@@ -1,0 +1,40 @@
+.navbar-collapse.collapsing, .navbar-collapse.in {
+ clear: left;
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+  .custom-form {
+      width: 330px;
+      margin-left: 2em;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+  .custom-form {
+    width: 330px;
+    margin-left: 2em;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  .custom-form {
+    width: 330px;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .custom-form {
+    width: 330px;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+  .custom-form {
+    width: 330px;
+  }
+}

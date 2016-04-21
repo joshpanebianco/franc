@@ -1,3 +1,6 @@
+<div class="container">
+<div class="row">
+<div class="custom-form">
 <h1>Sign Up</h1>
 
 <% if @user.errors.any? %>
@@ -9,23 +12,39 @@
 <% end %>
 
           <%= form_for @user do |f| %>
-
+          <fieldset class="form-group">
             <%= f.label :email %>
-            <%= f.text_field :email, :required => true %>
+            <%= f.text_field :email, :required => true, :class => 'form-control' %>
+          </fieldset>
 
+          <fieldset class="form-group">
             <%= f.label :password %>
-            <%= f.password_field :password, :required => true %>
+            <%= f.password_field :password, :required => true, :class => 'form-control' %>
+          </fieldset>
 
+          <fieldset class="form-group">
             <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, :required => true %>
+            <%= f.password_field :password_confirmation, :required => true, :class => 'form-control' %>
+          </fieldset>
 
+          <fieldset class="form-group">
             <%= f.label :first_name %>
-            <%= f.text_field :first_name, :required => true %>
+            <%= f.text_field :first_name, :required => true, :class => 'form-control' %>
+          </fieldset>
 
+          <fieldset class="form-group">
             <%= f.label :last_name %>
-            <%= f.text_field :last_name, :required => true %>
+            <%= f.text_field :last_name, :required => true, :class => 'form-control' %>
+          </fieldset>
 
+          <fieldset class="form-group">
             <%= f.label :image%>
-            <%= f.url_field :image %>
-            <%= f.submit "signup" %>
+            <%= f.url_field :image, :class => 'form-control' %>
+          </fieldset>
+
+            <%= f.submit "Login", :class => 'btn btn-primary' %>
           <% end %>
+
+</div>
+</div>
+</div>

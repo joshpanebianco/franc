@@ -1,8 +1,8 @@
 .hero-section {
   height: auto;
-  background-image: -webkit-linear-gradient(270deg, rgba(22, 45, 121, .2), hsla(0, 0%, 100%, .5)), url("hero-bg.jpg");
+  background-image: -webkit-linear-gradient(270deg, rgba(22, 45, 121, .8), hsla(0, 0%, 100%, .5)), url("https://pixabay.com/static/uploads/photo/2015/03/26/09/41/tie-690084_960_720.jpg");
 
-  background-image: linear-gradient(180deg, rgba(22, 45, 121, .2), hsla(0, 0%, 100%, .5)), url("hero-bg.jpg");
+  background-image: linear-gradient(180deg, rgba(22, 45, 121, .8), hsla(0, 0%, 100%, .5)), url("https://pixabay.com/static/uploads/photo/2015/03/26/09/41/tie-690084_960_720.jpg");
   background-position: 0px 0px, 50% 100%;
   background-size: auto, cover;
 }
@@ -12,16 +12,19 @@
 }
 
 .footer-section {
-  background-color: #4f79a7;
+  /*background-color: #4f79a7*/
+  background-color: rgba(79, 121, 167, 1)
 }
 
 .hero-container {
-  height: 100vh;
+  width: 100vw;
   padding-top: 9px;
   padding-bottom: 125px;
   border-right: 2px none #fff;
   border-left: 2px none #fff;
-  background-color: rgba(79, 121, 167, .95);
+  /*background-color: #a6cae4;*/
+  background-color: rgba(79, 121, 167, 0.5)
+
 }
 
 .franc-header {
@@ -55,7 +58,7 @@
 .hero-cta-box {
   margin: 175px -5px 30px 0px;
   padding: 15px 20px;
-  border-style: none dotted none none;
+  /*border-style: none dotted none none;*/
   border-width: 9px 5px 2px 2px;
   border-color: #241c4b #222 #241c4b #241c4b;
   border-radius: 40px 4px 4px 40px;
@@ -83,6 +86,7 @@
 .header-cta-button:hover {
   background-color: #222;
   color: #f5f5f5;
+  text-decoration: none;
 }
 
 .cta-box-header {
@@ -137,6 +141,10 @@
   padding-left: 0px;
 }
 
+.multi-col-section {
+  background-color: #f5f5f5;
+}
+
 .multi-col-container {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -179,13 +187,21 @@
 }
 
 .contact-section {
-  background-color: #ebebeb;
+  /*background-color: #ebebeb;*/
+  height: auto;
+  background-image: -webkit-linear-gradient(270deg, rgba(22, 45, 121, .8), hsla(0, 0%, 100%, .5)), url("http://www.janelholland.com/wp-content/uploads/2016/03/Dollarphotoclub_86346713.jpg");
+
+  background-image: linear-gradient(180deg, rgba(22, 45, 121, .8), hsla(0, 0%, 100%, .5)), url("http://www.janelholland.com/wp-content/uploads/2016/03/Dollarphotoclub_86346713.jpg");
+  background-position: 0px 0px, 80% 60%;
+  background-size: auto, 200%;
 }
 
 .contact-container {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #a6cae4;
+  background-color: rgba(79, 121, 167, 0.5)
+  /*background-color: #a6cae4;*/
+  /*background-color: #4f79a7;*/
 }
 
 .contact-form {
@@ -199,6 +215,8 @@
 }
 
 .field-label {
+  color: #dcdcdc;
+
   margin-bottom: 0px;
   padding-left: 15px;
   font-size: 20px;
@@ -220,14 +238,15 @@
   margin-right: auto;
   margin-left: auto;
   padding: 10px 50px;
-  border: 1px solid #222;
+  border: 1px solid #dcdcdc;
+;
   border-radius: 25px;
   background-color: transparent;
-  color: #222;
+  color: #dcdcdc;
 }
 
 .contact-button:hover {
-  background-color: #222;
+  background-color: #4f79a7;
   color: #f5f5f5;
 }
 
@@ -247,7 +266,7 @@
 
 .contact-header {
   font-family: 'Fjalla One', sans-serif;
-  color: #333;
+  color: #f5f5f5;
   text-align: center;
 }
 
@@ -258,8 +277,8 @@
   padding-bottom: 5px;
   font-family: 'Fjalla One', sans-serif;
   color: #dcdcdc;
-  font-size: 38px;
-  line-height: 42px;
+  font-size: 24px;
+  line-height: 20px;
   font-weight: 400;
   text-align: center;
 }
@@ -289,11 +308,12 @@
   padding: 10px 15px;
   font-family: 'Fjalla One', sans-serif;
   color: #dcdcdc;
-  font-size: 32px;
-  line-height: 34px;
+  font-size: 18px;
+  line-height: 16px;
 }
 
 .contact-text {
+  color: #dcdcdc;
   display: block;
   width: 600px;
   margin-right: auto;

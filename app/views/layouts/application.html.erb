@@ -62,7 +62,7 @@
              <%= link_to "Logout #{@current_user.email}", login_path, :method => :delete %>
              <%= link_to "Edit Profile", edit_user_path(@current_user) %>
              <%= link_to "View Applications", users_applications_path %>
-
+              <%= link_to "View Your Jobs", users_user_jobs_path %>
            <% else %>
              <%= link_to "Sign up", signup_path %>
              <%= link_to "Login", login_path %>

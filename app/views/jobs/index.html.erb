@@ -2,7 +2,7 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Jobs</h1>
+<h1 class="search_page">Job Search</h1>
 
 <div class="jobSearchFields">
 <div class="keyword_search">
@@ -11,7 +11,7 @@
   <fieldset class="form-group">
   <%= form_tag("/jobs", method: "get") do %>
 
-    <fieldset class="form-group">
+    <fieldset class="form-group general">
     <%= label_tag(:q, "General Search:") %>
     <%= text_field_tag :search_term, params[:search_term], :class => 'form-control' %>
     </fieldset>
@@ -19,7 +19,13 @@
     <%= submit_tag "Search", :class => 'btn btn-primary' %>
 <br>
 <br>
-<div class="advanced_form">
+<a href="#" id="advanced">Advanced Search</a>
+<script>
+  $('#advanced').on('click', function () {
+    $('.advanced_form').slideToggle();
+  });
+</script>
+<div class="advanced_form" style="display:none">
   <!--   Company only Search   -->
   <fieldset class="form-group">
     <%= label_tag(:q, "Company Search:", class:"test") %>
@@ -36,8 +42,13 @@
   <fieldset class="form-group">
   <%= label_tag(:q, "Salary Search:", class:'test') %>
   <%= select "salary", 'salary_range_min', @salary_range_min, :class => 'form-control'  %>
+  <br>
   <%= select "salary", 'salary_range_max', @salary_range_max, :class => 'form-control'  %>
   </fieldset>
+
+  <script>
+  $('select').addClass('form-control');
+  </script>
 
 <br>
   <%= submit_tag "Search", :class => 'btn btn-primary' %>
@@ -53,7 +64,7 @@
   <thead class="thead-inverse">
     <tr>
       <th>Company</th>
-      <th>Description</th>
+      <!-- <th>Description</th> -->
       <th>Location</th>
       <th>Requirements</th>
       <th>Remuneration</th>
@@ -67,7 +78,7 @@
     <% @jobs.each do |job| %>
       <tr>
         <td><%= job.company %></td>
-        <td><%= job.description %></td>
+        <!-- <td><%= job.description %></td> -->
         <td><%= job.location %></td>
         <td><%= job.requirements %></td>
         <td><%= job.remuneration %></td>

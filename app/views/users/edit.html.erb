@@ -1,28 +1,53 @@
-<h1>EDIT USER</h1>
+<div class="container">
+<div class="row">
+<div class="custom-form">
+
+<h1>Edit Profile</h1>
 <%= form_for @user do |f| %>
+
+<fieldset class="form-group">
 <%= f.label :email %>
-<%= f.text_field :email %>
+<%= f.text_field :email, :class => 'form-control' %>
+</fieldset>
 
+<fieldset class="form-group">
 <%= f.label :password %>
-<%= f.password_field :password %>
+<%= f.password_field :password, :class => 'form-control' %>
+</fieldset>
 
+<fieldset class="form-group">
 <%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %>
+<%= f.password_field :password_confirmation, :class => 'form-control' %>
+</fieldset>
 
+<fieldset class="form-group">
 <%= f.label :first_name %>
-<%= f.text_field :first_name, :required => true %>
+<%= f.text_field :first_name, :required => true , :class => 'form-control'%>
+</fieldset>
 
+<fieldset class="form-group">
 <%= f.label :last_name %>
-<%= f.text_field :last_name, :required => true %>
+<%= f.text_field :last_name, :required => true, :class => 'form-control' %>
+</fieldset>
 
+<fieldset class="form-group">
 <%= f.label :date_of_birth %>
-<%= f.date_field :dob, :value => Time.now.strftime('%Y-%m-%d') %>
+<%= f.date_field :dob, :value => Time.now.strftime('%Y-%m-%d'), :class => 'form-control' %>
+</fieldset>
 
+<fieldset class="form-group">
 <%= f.label :address %>
-<%= f.text_field :address, :required => true %>
+<%= f.text_field :address, :required => true, :class => 'form-control' %>
+</fieldset>
 
+<fieldset class="form-group">
 <%= f.label :avatar%>
-<%= f.file_field :avatar %>
+<%= f.file_field :avatar, :class => 'form-control' %>
+</fieldset>
 
 <%= f.submit %>
 <% end %>
+
+</div>
+</div>
+</div>

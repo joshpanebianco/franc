@@ -10,7 +10,7 @@
 
           <%= form_for @user do |f| %>
 
-            <%= f.label :email %>
+            <%= f.label :email, :required => true %>
             <%= f.text_field :email, :required => true %>
 
             <%= f.label :password %>
@@ -25,7 +25,13 @@
             <%= f.label :last_name %>
             <%= f.text_field :last_name, :required => true %>
 
+            <%= f.label :date_of_birth %>
+            <%= f.date_field :dob, :value => Time.now.strftime('%Y-%m-%d') %>
+
+            <%= f.label :address %>
+            <%= f.text_field :address, :required => true %>
+
             <%= f.label :image%>
             <%= f.url_field :image %>
-            <%= f.submit "signup" %>
+            <%= f.submit "Register" %>
           <% end %>

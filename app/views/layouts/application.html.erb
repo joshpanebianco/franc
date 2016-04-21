@@ -9,19 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <!-- <%= link_to "Home", root_path %> -->
 
-  <!-- <div data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="w-nav nav-section">
-    <div class="w-container">
-      <a href="#" data-ix="icon-hover" class="w-nav-brand logo-div"><%= image_tag("Franc-logo.png", size: '60', :alt => "click to scroll", :class => "logo-img") %>
-      </a>
-      <nav role="navigation" class="w-nav-menu"><a href="#home" class="w-nav-link nav-link">Home</a><a href="#video" class="w-nav-link nav-link">About</a><a href="#Message" class="w-nav-link nav-link">Contact</a>
-      </nav>
-      <div class="w-nav-button">
-        <div class="w-icon-nav-menu"></div>
-      </div>
-    </div>
-  </div> -->
   <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
 
@@ -33,42 +21,33 @@
    </button>
    <a class="navbar-brand" href="/"><i class="fa fa-film" aria-hidden="true"></i> Franc</a>
 
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
    <ul class="nav navbar-nav navbar-right">
 
         <% if @current_user.present? %>
 
 
-                   <li><%= link_to "Logout #{@current_user.email}", login_path, :method => :delete %></li>
+                   <li><%= link_to "Logout #{@current_user.first_name}", login_path, :method => :delete %></li>
+                   <li><%= image_tag @current_user.avatar_url(:display), :class => "profile_pic" %></li>
                    <li><%= link_to "Edit Profile", edit_user_path(@current_user) %></li>
                    <li><%= link_to "View Applications", users_applications_path %></li>
-
+                    <li> <%= link_to "View Your Jobs", users_user_jobs_path %></li>
                  <% else %>
-                   <li><%= link_to "Sign up", signup_path %></li>
+                   <li><%= link_to "Register", signup_path %></li>
                    <li><%= link_to "Login", login_path %></li>
 
-                   <!-- <li><a href="#">Sign Up</a></li>
-                   <li><a href="#">Login</a></li> -->
+
         <% end %>
    </ul>
-
+  </div>
 
 
   </div>
   </nav>
-  <!-- <%= link_to "Home", root_path %>
-  <% if @current_user.present? %>
 
 
-             <%= link_to "Logout #{@current_user.email}", login_path, :method => :delete %>
-             <%= link_to "Edit Profile", edit_user_path(@current_user) %>
-             <%= link_to "View Applications", users_applications_path %>
-
-           <% else %>
-             <%= link_to "Sign up", signup_path %>
-             <%= link_to "Login", login_path %>
 
 
-  <% end %> -->
 
 <%= yield %>
 <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>

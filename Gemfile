@@ -33,6 +33,10 @@ gem 'lolcommits', '~> 0.6.5'
 
 gem 'ratyrate'
 
+gem 'cloudinary'
+
+gem 'carrierwave'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

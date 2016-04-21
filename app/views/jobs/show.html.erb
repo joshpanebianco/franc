@@ -1,3 +1,4 @@
+<div class="container">
 <% if !flash.empty? %>
 <div id="flash">
    <% flash.keys.each do |k| %>
@@ -25,3 +26,4 @@
 <% if !flash[:success].present?  %>
    <%= link_to 'Apply Now', new_job_application_path(@job) %>
 <% end %>
+</div>

@@ -1,32 +1,45 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Jobs</h1>
 
 <div class="jobSearchFields">
 <div class="keyword_search">
+<div class="search_page">
 <!--   General Search   -->
+  <fieldset class="form-group">
   <%= form_tag("/jobs", method: "get") do %>
+
+    <fieldset class="form-group">
     <%= label_tag(:q, "General Search:") %>
-    <%= text_field_tag(:search_term, params[:search_term]) %>
-    <%= submit_tag("Search") %>
+    <%= text_field_tag :search_term, params[:search_term], :class => 'form-control' %>
+    </fieldset>
+
+    <%= submit_tag "Search", :class => 'btn btn-primary' %>
 <br>
 <br>
 
   <!--   Company only Search   -->
+  <fieldset class="form-group">
     <%= label_tag(:q, "Company Search:", class:"test") %>
-    <%= text_field_tag(:search_company, params[:search_company]) %>
+    <%= text_field_tag :search_company, params[:search_company], :class => 'form-control' %>
+  </fieldset>
 
 <!--   Description only Search   -->
+<fieldset class="form-group">
   <%= label_tag(:q, "Description Search:", class:"test") %>
-  <%= text_field_tag(:search_description, params[:search_description]) %>
+  <%= text_field_tag :search_description, params[:search_description], :class => 'form-control'  %>
+</fieldset>
 <br>
   <!--   Salary Search   -->
+  <fieldset class="form-group">
   <%= label_tag(:q, "Salary Search:", class:'test') %>
-  <%= select("salary", 'salary_range_min', @salary_range_min) %>
-  <%= select("salary", 'salary_range_max', @salary_range_max) %>
+  <%= select "salary", 'salary_range_min', @salary_range_min, :class => 'form-control'  %>
+  <%= select "salary", 'salary_range_max', @salary_range_max, :class => 'form-control'  %>
+  </fieldset>
 
 <br>
-  <%= submit_tag("Search") %>
+  <%= submit_tag "Search", :class => 'btn btn-primary' %>
 <% end %>
 </div>
 </div>
@@ -34,8 +47,8 @@
 <br>
 
 <div id="jobList">
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-inverse">
     <tr>
       <th>Company</th>
       <th>Description</th>
@@ -58,9 +71,11 @@
         <td><%= job.remuneration %></td>
         <td><%= job.position %></td>
         <td><%= job.contract %></td>
-        <td><%= link_to 'Details', job %></td>
+        <td><%= link_to 'Details', job, :class => 'btn btn-primary' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
 </div>

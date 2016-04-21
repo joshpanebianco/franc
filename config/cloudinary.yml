@@ -1,19 +1,19 @@
 ---
 development:
   cloud_name: dvhttjm6c
-  api_key: '665716837172962'
+  api_key: '712673355854821'
   api_secret: <%= ENV['CLOUDINARY_SECRET'] %>
   enhance_image_tag: true
   static_image_support: false
 production:
   cloud_name: dvhttjm6c
-  api_key: '665716837172962'
+  api_key: '712673355854821'
   api_secret: <%= ENV['CLOUDINARY_SECRET'] %>
   enhance_image_tag: true
   static_image_support: true
 test:
   cloud_name: dvhttjm6c
-  api_key: '665716837172962'
+  api_key: '712673355854821'
   api_secret: <%= ENV['CLOUDINARY_SECRET'] %>
   enhance_image_tag: true
   static_image_support: false

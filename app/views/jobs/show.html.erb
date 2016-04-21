@@ -24,6 +24,6 @@
 <h2>Contract: <%= @job.contract %></h2>
 
 <% if !flash[:success].present?  %>
-   <%= link_to 'Apply Now', new_job_application_path(@job) %>
+   <%= link_to 'Apply Now', new_job_application_path(@job), :class => 'btn btn-primary' %>
 <% end %>
 </div>

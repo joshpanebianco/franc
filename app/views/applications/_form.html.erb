@@ -1,5 +1,12 @@
 <%= simple_form_for [@job, @application] do |f| %>
-  <%= f.input :videoURL, placeholder: 'https://www.youtube.com/watch?v=000000000' %>
-  <%= f.input :comments, placeholder: 'You comment here' %>
-  <%= f.button :submit %>
+
+  <fieldset class="form-group">
+  <%= f.input :videoURL, placeholder: 'https://www.youtube.com/watch?v=000000000', :class => 'form-control' %>
+  </fieldset>
+
+  <fieldset class="form-group">
+  <%= f.input :comments, placeholder: 'You comment here', :class => 'form-control' %>
+  </fieldset>
+
+  <%= f.button :submit, :class => 'btn btn-primary' %>
   <% end %>

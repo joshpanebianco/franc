@@ -1,4 +1,4 @@
-<h1>Sign Up</h1>
+<h1>Register</h1>
 
 <% if @user.errors.any? %>
 <ol>
@@ -31,7 +31,7 @@
             <%= f.label :address %>
             <%= f.text_field :address, :required => true %>
 
-            <%= f.label :image%>
-            <%= f.url_field :image %>
+            <%= f.label :avatar%>
+            <%= f.file_field :avatar %>
             <%= f.submit "Register" %>
           <% end %>

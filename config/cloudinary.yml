@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dvhttjm6c
+  api_key: '732739748686611'
+  api_secret: aql59dlFDaMmxjvvUoa2RoJGrgo
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dvhttjm6c
+  api_key: '732739748686611'
+  api_secret: aql59dlFDaMmxjvvUoa2RoJGrgo
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dvhttjm6c
+  api_key: '732739748686611'
+  api_secret: aql59dlFDaMmxjvvUoa2RoJGrgo
+  enhance_image_tag: true
+  static_image_support: false

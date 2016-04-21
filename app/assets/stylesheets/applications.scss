@@ -15,3 +15,16 @@
     margin: 2px 10px;
   }
 }
+
+.navbar-default {
+    background-color: #4f79a7;
+    border-color: #4f79a7;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}

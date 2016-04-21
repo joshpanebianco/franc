@@ -66,7 +66,12 @@
         </div>
         <div class="w-col w-col-4 w-col-stack hero-cta-column">
           <div class="hero-cta-box">
-            <h3 class="cta-box-header">Getting Started</h3><a href="#" class="header-cta-button">Sign In</a><a href="#" <--! class="header-cta-button">Register</a>  
+            <h3 class="cta-box-header">Getting Started</h3>
+            <%= link_to "Login", login_path, :class => 'header-cta-button' %>
+            <%= link_to "Register", new_user_path, :class => 'header-cta-button' %>
+
+               <!-- <%= link_to 'Job Search', jobs_path, :class => "header-cta-button" %>
+               <%= link_to 'Job Create', new_job_path, :class => "header-cta-button" %> -->
           </div>
         </div>
       </div>

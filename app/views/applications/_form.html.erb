@@ -2,13 +2,13 @@
 <%= form_for [@job, @application] do |f| %>
 
   <fieldset class="form-group">
-  <%= f.label :videoURL, 'Video URL' %>
+  <%= f.label :videoURL, 'Youtube Video URL' %>
   <%= f.url_field :videoURL, :placeholder => 'https://www.youtube.com/watch?v=000000000', :class => 'form-control' %>
   </fieldset>
 
   <fieldset class="form-group">
   <%= f.label :comments %>
-  <%= f.text_area :comments, placeholder: 'You comment here', :class => 'form-control' %>
+  <%= f.text_area :comments, placeholder: 'Any you comments you might have?', :class => 'form-control' %>
   </fieldset>
 
   <%= f.button :submit, :class => 'btn btn-primary' %>

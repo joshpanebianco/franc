@@ -10,7 +10,7 @@ class SessionController < ApplicationController
        #log em in
        redirect_to jobs_path
      else
-       flash[:error] = "Oops"
+       flash[:error] = "Login credentials invalid"
        redirect_to login_path
    end
   end

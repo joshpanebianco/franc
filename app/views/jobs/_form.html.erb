@@ -1,10 +1,33 @@
-  <%= simple_form_for @job do |f| %>
-    <%= f.input :company %>
-    <%= f.input :description %>
-    <%= f.input :location %>
-    <%= f.input :requirements %>
-    <%= f.input :remuneration, :as => :numeric %>
-    <%= f.input :position %>
-    <%= f.input :contract %>
-    <%= f.button :submit %>
+
+  <%= form_for @job do |f| %>
+  <fieldset class="form-group">
+    <%= f.label :company %>
+    <%= f.text_field :company, :class => 'form-control' %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, :class => 'form-control' %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, :class => 'form-control' %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :requirements %>
+    <%= f.text_field :requirements, :class => 'form-control' %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :remuneration %>
+    <%= f.number_field :remuneration, :class => 'form-control' %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :position %>
+    <%= f.text_field :position, :class => 'form-control' %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :contract %>
+    <%= f.text_field :contract, :class => 'form-control' %>
+  </fieldset>
+
+    <%= f.button :submit, :class => 'btn btn-primary' %>
     <% end %>

@@ -1,4 +1,5 @@
 <div class="container">
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Jobs</h1>
@@ -18,7 +19,7 @@
     <%= submit_tag "Search", :class => 'btn btn-primary' %>
 <br>
 <br>
-
+<div class="advanced_form">
   <!--   Company only Search   -->
   <fieldset class="form-group">
     <%= label_tag(:q, "Company Search:", class:"test") %>
@@ -41,6 +42,7 @@
 <br>
   <%= submit_tag "Search", :class => 'btn btn-primary' %>
 <% end %>
+</div>
 </div>
 </div>
 
@@ -76,6 +78,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>

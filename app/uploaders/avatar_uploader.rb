@@ -11,6 +11,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
    process :eager => true
    process :resize_to_fit => [50, 50]
  end
+
+ 
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog

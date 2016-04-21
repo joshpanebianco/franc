@@ -35,6 +35,8 @@ gem 'ratyrate'
 
 gem 'cloudinary'
 
+gem 'carrierwave'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

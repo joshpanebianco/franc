@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
   has_many :jobs
   has_secure_password
   validates :email, :presence => true, :uniqueness => true
+
+  attr_accessor :avatar
+  mount_uploader :avatar, AvatarUploader
 end

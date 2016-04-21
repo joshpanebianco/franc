@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :shortlists
   post '/rate' => 'rater#create', :as => 'rate'
-  root 'pages#index'
+  root :to => 'pages#index'
 
   resources :users, :only => [:new, :create, :index, :update]
   get '/users/edit' => 'users#edit', :as => 'edit_user'

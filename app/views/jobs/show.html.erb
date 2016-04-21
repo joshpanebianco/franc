@@ -9,19 +9,19 @@
 </div>
 <% end %>
 
-<h1>Company: <%= @job.company %> </h1>
+<h1><%= @job.position %></h1>
 
-<h2>Description: <%= @job.description %> </h2>
+<h3>Location: <%= @job.location %></h3>
 
-<h2>Location: <%= @job.location %></h2>
+<h3>Company: <%= @job.company %> </h3>
 
-<h2>Requirements: <%= @job.requirements %></h2>
+<h3>Description: <%= @job.description %> </h3>
 
-<h2>Pay Rate: <%= @job.remuneration %></h2>
+<h3>Requirements: <%= @job.requirements %></h3>
 
-<h2>Position: <%= @job.position %></h2>
+<h3>Pay Rate: $<%= @job.remuneration %></h3>
 
-<h2>Contract: <%= @job.contract %></h2>
+<h3>Contract: <%= @job.contract %></h3>
 
 <% if !flash[:success].present?  %>
    <%= link_to 'Apply Now', new_job_application_path(@job), :class => 'btn btn-primary' %>

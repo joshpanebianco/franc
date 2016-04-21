@@ -1,12 +1,16 @@
-<%= simple_form_for [@job, @application] do |f| %>
+<div class="app_page">
+<%= form_for [@job, @application] do |f| %>
 
   <fieldset class="form-group">
-  <%= f.input :videoURL, placeholder: 'https://www.youtube.com/watch?v=000000000', :class => 'form-control' %>
+  <%= f.label :videoURL, 'Video URL' %>
+  <%= f.url_field :videoURL, :placeholder => 'https://www.youtube.com/watch?v=000000000', :class => 'form-control' %>
   </fieldset>
 
   <fieldset class="form-group">
-  <%= f.input :comments, placeholder: 'You comment here', :class => 'form-control' %>
+  <%= f.label :comments %>
+  <%= f.text_area :comments, placeholder: 'You comment here', :class => 'form-control' %>
   </fieldset>
 
   <%= f.button :submit, :class => 'btn btn-primary' %>
   <% end %>
+</div>

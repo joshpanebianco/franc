@@ -30,7 +30,7 @@
 </p>
 
 <p>
-Application Rating: <%= rating_for @application, "application" %>
+Application Rating: <%= rating_for @application, "application", disable_after_rate => true %>
 </p>
 
 <%= link_to 'Edit', edit_job_application_path(@job, @application) %>
